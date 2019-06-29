@@ -81,12 +81,12 @@ class AuthController extends ResponseController
     }
 
     //getuser
-    public function user(Request $request)
+    public function getUser(Request $request)
     {
-        $id = $request->user()->id;
+        //$id = $request->user()->id;
         $user = $request->user();
         if($user){
-            return $this->sendResponse($id);
+            return $this->sendResponse($user);
         }
         else{
             $error = "user not found";
